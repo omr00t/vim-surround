@@ -237,7 +237,8 @@ function! s:wrap(string,char,type,removed,special)
     let before = '('.fnc.' '
     let after = ')'
   elseif idx >= 0
-    let spc = (idx % 3) == 1 ? " " : ""
+    " Removed the extra space.
+    let spc = (idx % 3) == 1 ? "" : ""
     let idx = idx / 3 * 3
     let before = strpart(pairs,idx+1,1) . spc
     let after  = spc . strpart(pairs,idx+2,1)
